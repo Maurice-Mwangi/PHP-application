@@ -1,6 +1,10 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5218e1c (User authentication and sessions)
 use Core\App;
 use Core\Database;
 use Core\Validator;
@@ -8,6 +12,7 @@ use Core\Validator;
 
 $db = App::container()->resolve(Database::class);
 
+<<<<<<< HEAD
 
 // $config = require base_path('config.php');
 // require base_path('core/Validator.php');
@@ -24,6 +29,8 @@ $db = new Database($config['database']);
 >>>>>>> 619e70801c3d7e1d9e2ddaa49f4ac3a398f43be4
 
 
+=======
+>>>>>>> 5218e1c (User authentication and sessions)
 $errors = [];
 
 
