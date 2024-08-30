@@ -1,13 +1,12 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
+
+$db = App::container()->resolve(Database::class);
 $id = $_GET['id'];
 $user_id = 1;
-
-$config = require base_path('config.php');
-
-$db = new Database($config['database']);
 
 $post = $db->query("Select * FROM notes WHERE id = :id", 
 [

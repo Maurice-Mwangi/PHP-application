@@ -15,11 +15,16 @@ $post = $db->query("Select * FROM notes WHERE id = :id",
     'id' => $id,
 ])->findOrFail();
 
+if(!$post){
+    abort();
+}
+
 authorize($post['user_id'] === $user_id);
 
-$db->query("DELETE FROM notes WHERE id = :id", [
-    ':id' => $_POST['id']
-]);
+$errors = [];
 
-header("Location: /notes");
-exit();
+view('notes/edit.view.php', [
+    'heading' => "Edit a note",
+    'errors' => $errors,
+    'post' => $post
+]);
