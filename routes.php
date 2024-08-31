@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 $router->get('/', 'controllers/index.php');
 $router->get('/about', 'controllers/about.php');
 $router->get('/contact', 'controllers/contact.php');
@@ -51,3 +52,30 @@ $router->post('/register', 'controllers/registration/store.php');
 
 
 >>>>>>> 5218e1c (User authentication and sessions)
+=======
+$router->get('/', 'index.php');
+$router->get('/about', 'about.php');
+$router->get('/contact', 'contact.php');
+
+$router->get('/notes', 'notes/index.php')->only('auth');
+$router->post('/notes', 'notes/store.php');
+
+//note routes
+$router->get('/note', 'notes/show.php');
+$router->delete('/note', 'notes/destroy.php');
+$router->get('/note/edit', 'notes/edit.php');
+$router->patch('/note', 'notes/update.php');
+$router->get('/note/create', 'notes/create.php');
+
+
+//regitration routes
+$router->get('/register', 'registration/create.php')->only('guest');
+$router->post('/register', 'registration/store.php');
+
+
+$router->get('/login', 'sessions/create.php')->only('guest');
+$router->post('/login', 'sessions/store.php')->only('guest');
+$router->delete('/login', 'sessions/destroy.php')->only('auth');
+
+
+>>>>>>> 7fd695c (Sessions and Log out)

@@ -40,4 +40,15 @@ function view($path, $attributes = [])
 {
     extract($attributes);
     require base_path('views/' . $path);
+<<<<<<< HEAD
+=======
+}
+
+
+
+function redirect($path)
+{
+    header("Location: " . $path);
+    exit;
+>>>>>>> 7fd695c (Sessions and Log out)
 }
